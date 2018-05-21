@@ -1,0 +1,93 @@
+package main
+
+import (
+	"encoding/json"
+	"log"
+	"testldap/deptree"
+)
+
+func main() {
+	var json_str = `{"Host":"192.168.8.111",
+	"Port":389,
+	"Base":"dc=yunwanjia,dc=com",
+	"User":"cn=admin,dc=yunwanjia,dc=com",
+	"Password":"abc123"}`
+	var config map[string]interface{}
+	json.Unmarshal([]byte(json_str), &config)
+	var err error
+
+	// 新增商户
+	node := deptree.OrgNode{
+		Mid:  "test003",
+		Type: deptree.TYPE_SHOP,
+		Name: "测试商户02",
+	}
+	cli := deptree.NewTree(config)
+	id, err := cli.AddOrgNode(node)
+	log.Println(id, err)
+
+	// 新增分公司
+	node2 := deptree.OrgNode{
+		Mid:  "test003",
+		Pid:  "test003",
+		Type: deptree.TYPE_SUBCOM,
+		Name: "测试分店02",
+	}
+	id, err = cli.AddOrgNode(node2)
+	log.Println(id, err)
+
+	// 新增部门
+	node21 := deptree.OrgNode{
+		Mid:  "test003",
+		Pid:  id,
+		Type: deptree.TYPE_DEP,
+		Name: "测试部门02",
+	}
+	id, err = cli.AddOrgNode(node21)
+	log.Println(id, err)
+
+	// 修改属性
+	node3 := deptree.OrgNode{
+		Mid:  "test003",
+		Pid:  "test003",
+		Id:   "c95744dfb90c4e5ea20ef6a36770c5f0",
+		Type: 1,
+		Name: "更新名称01",
+	}
+	err = cli.ModifyOrgNode(node3)
+	log.Println(err)
+
+	// 删除节点
+	err = cli.DelOrgNode("test003", "c95744dfb90c4e5ea20ef6a36770c5f0")
+	log.Println(err)
+
+	// 新增超级管理员
+	l1 := deptree.LeafNode{
+		Mid:   "test003",
+		Pid:   "test003",
+		Uid:   "u1",
+		Roles: []string{"1", "2"},
+	}
+	err = cli.AddLeafNode(l1)
+	log.Println(err)
+
+	// 新增底层人员
+	l2 := deptree.LeafNode{
+		Mid:   "test003",
+		Pid:   "4e2a059c896d4cb9abf921011bc92014",
+		Uid:   "u2",
+		Roles: []string{"11", "2"},
+	}
+	err = cli.AddLeafNode(l2)
+	log.Println(err)
+
+	// 更新人员信息
+	l2.Roles = []string{"act"}
+	err = cli.ModifyLeafNode(l2)
+	log.Println(err)
+
+	// 删除人员信息
+	err = cli.DelLeafNode("test003", "test003", "u1")
+	log.Println(err)
+
+}

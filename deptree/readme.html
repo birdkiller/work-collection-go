@@ -1,0 +1,347 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "saas/common/utils/deptree"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="#GetId">func GetId() string</a></dd>
+			
+				
+				<dd><a href="#SetId">func SetId(c chan string)</a></dd>
+			
+			
+				
+				<dd><a href="#DepTree">type DepTree</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewTree">func NewTree(config map[string]interface{}) DepTree</a></dd>
+				
+				
+			
+				
+				<dd><a href="#LeafNode">type LeafNode</a></dd>
+				
+				
+			
+				
+				<dd><a href="#OrgNode">type OrgNode</a></dd>
+				
+				
+			
+				
+				<dd><a href="#OrgTree">type OrgTree</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/testldap/deptree/deptree.go">deptree.go</a>
+			
+				<a href="/src/testldap/deptree/idcreator.go">idcreator.go</a>
+			
+				<a href="/src/testldap/deptree/ldap.go">ldap.go</a>
+			
+				<a href="/src/testldap/deptree/model.go">model.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="TYPE_DEP">TYPE_DEP</span> <a href="/pkg/builtin/#int">int</a> = 3</pre>
+			
+				
+				<pre>var <span id="TYPE_SHOP">TYPE_SHOP</span> <a href="/pkg/builtin/#int">int</a> = 1</pre>
+			
+				
+				<pre>var <span id="TYPE_SUBCOM">TYPE_SUBCOM</span> <a href="/pkg/builtin/#int">int</a> = 2</pre>
+			
+		
+		
+			
+			
+			<h2 id="GetId">func <a href="/src/target/idcreator.go?s=282:301#L12">GetId</a>
+				<a class="permalink" href="#GetId">&#xb6;</a>
+			</h2>
+			<pre>func GetId() <a href="/pkg/builtin/#string">string</a></pre>
+			<p>
+GetId 获取一个ID
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SetId">func <a href="/src/target/idcreator.go?s=130:155#L2">SetId</a>
+				<a class="permalink" href="#SetId">&#xb6;</a>
+			</h2>
+			<pre>func SetId(c chan <a href="/pkg/builtin/#string">string</a>)</pre>
+			<p>
+SetId 循环设置ID等待使用
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="DepTree">type <a href="/src/target/deptree.go?s=137:1149#L1">DepTree</a>
+				<a class="permalink" href="#DepTree">&#xb6;</a>
+			</h2>
+			<p>
+DepTree 组织架构树操作接口
+说明：依赖包 - gopkg.in/ldap.v2
+</p>
+<pre>- github.com/golibs/uuid
+</pre>
+
+			<pre>type DepTree interface {
+    <span class="comment">// AddOrgNode 新增组织节点 node 节点信息 需包含Mid Pid(顶级节点可省略) Name(同一节点下需保证唯一) 信息 Id可选</span>
+    <span class="comment">// 返回节点id</span>
+    AddOrgNode(node <a href="#OrgNode">OrgNode</a>) (<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)
+    <span class="comment">// ModifyOrgNode 修改组织节点 node需包含完整的Mid Id 信息 只能更新Name信息，传空不更新</span>
+    ModifyOrgNode(node <a href="#OrgNode">OrgNode</a>) <a href="/pkg/builtin/#error">error</a>
+    <span class="comment">// DelOrgNode 删除组织节点 id-节点ID</span>
+    DelOrgNode(mid <a href="/pkg/builtin/#string">string</a>, id <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a>
+    <span class="comment">// AddLeafNode 新增叶子节点</span>
+    AddLeafNode(leaf <a href="#LeafNode">LeafNode</a>) <a href="/pkg/builtin/#error">error</a>
+    <span class="comment">// ModifyLeafNode 修改叶子节点</span>
+    ModifyLeafNode(leaf <a href="#LeafNode">LeafNode</a>) <a href="/pkg/builtin/#error">error</a>
+    <span class="comment">// DelLeafNode 删除叶子节点 pid-父节点ID uid-uid</span>
+    DelLeafNode(mid <a href="/pkg/builtin/#string">string</a>, pid <a href="/pkg/builtin/#string">string</a>, uid <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a>
+    <span class="comment">// GetLeafNodes 根据mid，uid取叶子节点信息</span>
+    GetLeafNodes(mid <a href="/pkg/builtin/#string">string</a>, uid <a href="/pkg/builtin/#string">string</a>) ([]<a href="#LeafNode">LeafNode</a>, <a href="/pkg/builtin/#error">error</a>)
+    <span class="comment">// GetOrgNode 取组织节点信息</span>
+    GetOrgNode(mid <a href="/pkg/builtin/#string">string</a>, id <a href="/pkg/builtin/#string">string</a>) (*<a href="#OrgNode">OrgNode</a>, <a href="/pkg/builtin/#error">error</a>)
+    <span class="comment">// GetSubTree 取树形结构</span>
+    GetSubTree(mid <a href="/pkg/builtin/#string">string</a>, id <a href="/pkg/builtin/#string">string</a>) (*<a href="#OrgTree">OrgTree</a>, <a href="/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTree">func <a href="/src/target/deptree.go?s=1227:1278#L19">NewTree</a>
+					<a class="permalink" href="#NewTree">&#xb6;</a>
+				</h3>
+				<pre>func NewTree(config map[<a href="/pkg/builtin/#string">string</a>]interface{}) <a href="#DepTree">DepTree</a></pre>
+				<p>
+NewTree 目前仅返回ldap结构树对象，扩展视后续需求开发
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="LeafNode">type <a href="/src/target/model.go?s=287:427#L4">LeafNode</a>
+				<a class="permalink" href="#LeafNode">&#xb6;</a>
+			</h2>
+			<p>
+Leaf 叶节点
+</p>
+
+			<pre>type LeafNode struct {
+<span id="LeafNode.Mid"></span>    Mid   <a href="/pkg/builtin/#string">string</a>   <span class="comment">// 商户ID</span>
+<span id="LeafNode.Pid"></span>    Pid   <a href="/pkg/builtin/#string">string</a>   <span class="comment">// 父节点ID</span>
+<span id="LeafNode.Uid"></span>    Uid   <a href="/pkg/builtin/#string">string</a>   <span class="comment">// uid</span>
+<span id="LeafNode.Roles"></span>    Roles []<a href="/pkg/builtin/#string">string</a> <span class="comment">// 角色ID列表</span>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="OrgNode">type <a href="/src/target/model.go?s=38:267#L1">OrgNode</a>
+				<a class="permalink" href="#OrgNode">&#xb6;</a>
+			</h2>
+			<p>
+Node 组织节点
+</p>
+
+			<pre>type OrgNode struct {
+<span id="OrgNode.Mid"></span>    Mid       <a href="/pkg/builtin/#string">string</a> <span class="comment">// 商户ID</span>
+<span id="OrgNode.Pid"></span>    Pid       <a href="/pkg/builtin/#string">string</a> <span class="comment">// 父节点ID</span>
+<span id="OrgNode.Id"></span>    Id        <a href="/pkg/builtin/#string">string</a> <span class="comment">// ID</span>
+<span id="OrgNode.Type"></span>    Type      <a href="/pkg/builtin/#int">int</a>    <span class="comment">// 1-商户 2-分公司 3-部门</span>
+<span id="OrgNode.Name"></span>    Name      <a href="/pkg/builtin/#string">string</a> <span class="comment">// 名称</span>
+<span id="OrgNode.IsDefault"></span>    IsDefault <a href="/pkg/builtin/#bool">bool</a>   <span class="comment">// 是否默认生成</span>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="OrgTree">type <a href="/src/target/model.go?s=449:574#L12">OrgTree</a>
+				<a class="permalink" href="#OrgTree">&#xb6;</a>
+			</h2>
+			<p>
+OrgTree组织树
+</p>
+
+			<pre>type OrgTree struct {
+    <a href="#OrgNode">OrgNode</a>             <span class="comment">// 本节点属性</span>
+<span id="OrgTree.SubTrees"></span>    SubTrees []<a href="#OrgTree">OrgTree</a>  <span class="comment">// 子树</span>
+<span id="OrgTree.SubLeafs"></span>    SubLeafs []<a href="#LeafNode">LeafNode</a> <span class="comment">// 子叶</span>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+</html>
